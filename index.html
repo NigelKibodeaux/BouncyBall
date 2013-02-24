@@ -4,14 +4,17 @@
   <title>bouncy ball page</title> 
   
   <style type="text/css"> 
-        html, body {
-          margin: 0px;
-          padding: 0px;
-  	  	  background-color: black;
-        }
+		html, body {
+			margin: 0px;
+			padding: 0px;
+			background-color: black;
+			color: white;
+			font-family: sans-serif;
+			font-size: 12px;
+		}
 		canvas {
-		  background-color: white;
-		  //cursor: url('Transparent.gif'), auto;
+			background-color: white;
+			//cursor: url('Transparent.gif'), auto;
 		}
 		#canvasContainer {
 			width: 800px;
@@ -274,7 +277,7 @@
 	}
 	
   window.addEventListener('load', function() {
- 	on = true;
+	on = true;
 	speedMultiplier = 1;
 	x = 10;
 	y = 10;
@@ -320,6 +323,7 @@
 <div id="canvasContainer">
 	<!--<canvas id="canvas" width="480" height="320"></canvas>-->
 	<canvas id="canvas" width="800" height="600"></canvas>
+	1 - explosion &nbsp; 2 - vacuum	 &nbsp; 3 - black hole &nbsp; 4 - sticky spot
 </div>
 </body>
 </html>
