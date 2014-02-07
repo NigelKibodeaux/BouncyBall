@@ -17,7 +17,7 @@
 			//cursor: url('Transparent.gif'), auto;
 		}
 		#canvasContainer {
-			width: 800px;
+			width: 600px;
 			position: relative;
 			margin: auto;
 			margin-top: 20px;
@@ -27,21 +27,17 @@
 			top: 0px;
 			right: 0px;
 		}
-  </style> 
-  
-  <script type="text/javascript" src="script.js"></script> 
-  
+  </style>   
 </head> 
 <body> 
 <div id="controls">
 	<!--<input id="x"/><input id="y"/>-->
 	<button onclick="startStop()">pause</button>
+	<button onclick="resetGame()">restart</button>
 </div>
 <div id="canvasContainer">
-	<!--<canvas id="canvas" width="480" height="320"></canvas>-->
-	<canvas id="canvas" width="800" height="600"></canvas>
-	<div>1 - explosion &nbsp; 2 - vacuum	 &nbsp; 3 - black hole &nbsp; 4 - sticky spot</div>
-	<div>(A mouse click is the same as pressing the 1 key)</div>
+	<canvas id="canvas" width="600" height="600"></canvas>
 </div>
+<script type="text/javascript" src="script.js"></script> 
 </body>
 </html>
