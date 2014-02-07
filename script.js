@@ -149,7 +149,8 @@ function resetGame() {
 
 window.addEventListener('load', function() {
 
-	canvasElement.addEventListener('mousedown', flap, false);
+	var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "mousedown");
+	canvasElement.addEventListener(clickHandler, flap, false);
 	//canvasElement.addEventListener('mouseout', function(){if(on)startStop();}, false);
 	//canvasElement.addEventListener('mouseover', function(){if(!on)startStop();}, false);
 	document.addEventListener('keydown', flap, false);
