@@ -19,6 +19,7 @@
 			position: relative;
 			margin: auto;
 			margin-top: 20px;
+			text-align: center;
 		}
 		#controls {
 			position: absolute;
@@ -30,12 +31,12 @@
 <body> 
 <div id="controls">
 	<!--<input id="x"/><input id="y"/>-->
-	<button onclick="startStop()">pause</button>
+	<!--<button onclick="startStop()">pause</button>-->
 </div>
 <div id="canvasContainer">
 	<canvas id="canvas" width="600" height="600"></canvas>
+	<h1 id="points" value="0"></h1>
 </div>
-Points <input id="points" value="0">
 <script type="text/javascript" src="script.js"></script> 
 </body>
 </html>

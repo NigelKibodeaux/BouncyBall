@@ -8,6 +8,7 @@ window.buildingSpacing = 250;
 window.buildingWidth = 100;
 window.ballRadius = 15;
 window.buildings = [];
+window.points = 0;
 window.pointsCounter = document.getElementById('points');
 
 
@@ -22,7 +23,7 @@ function startStop(){
 	on = !on;
 }
 
-function flap() {
+function flap(e) {
 	if (on) {
 		// modify ball movement
 		Vy = Vy - powerFactor;
@@ -65,8 +66,10 @@ Building.prototype.isOverlap = function(x, y, radius) {
 			lose();
 	}
 	else if (x-radius > maxX) {
-		if (!this.conquered)
-			pointsCounter.value = parseInt(pointsCounter.value) + 1;
+		if (!this.conquered) {
+			points++;
+			pointsCounter.innerText = points;
+		}
 		this.conquered = true;
 	}
 }
@@ -133,7 +136,8 @@ function resetGame() {
 	y = canvasHeight / 2;
 	Vy = 0;
 	Ay = .0015;
-	//Ay = 0;
+	points = 0;
+	pointsCounter.innerText = '';
 	scrollSpeed = 1 * speedMultiplier;
 	powerFactor = 1 * speedMultiplier;
 	lastTime = new Date().getTime();
@@ -150,7 +154,14 @@ function resetGame() {
 window.addEventListener('load', function() {
 
 	var clickHandler = ('ontouchstart' in document.documentElement ? "touchstart" : "mousedown");
-	canvasElement.addEventListener(clickHandler, flap, false);
+	canvasElement.addEventListener(
+		clickHandler, 
+		function(e){
+			flap(), 
+			// stop highlighting stuff
+			e.preventDefault();
+		}, 
+		false);
 	//canvasElement.addEventListener('mouseout', function(){if(on)startStop();}, false);
 	//canvasElement.addEventListener('mouseover', function(){if(!on)startStop();}, false);
 	document.addEventListener('keydown', flap, false);
